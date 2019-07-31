@@ -42,11 +42,12 @@
 
 						<?php
               include 'operator/koneksi.php';
+							$id_kelurahan = $_GET['id_kelurahan'];
               $query_proker = mysqli_query($koneksi,
               "SELECT * FROM program_kerja
               JOIN kelurahan ON kelurahan.id_kelurahan = program_kerja.id_kelurahan
               JOIN operator ON operator.id_operator = program_kerja.id_operator
-              WHERE program_kerja.status = 'aktif'");
+              WHERE program_kerja.id_kelurahan='$id_kelurahan' AND program_kerja.status = 'aktif'");
               while ($row_proker = mysqli_fetch_assoc($query_proker)) {
                 $query_lokasi = mysqli_query($koneksi, "SELECT * FROM lokasi WHERE id_kelurahan = '$row_proker[id_kelurahan]'");
                 $row_loc = mysqli_fetch_assoc($query_lokasi);

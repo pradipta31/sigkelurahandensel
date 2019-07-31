@@ -12,7 +12,6 @@
     <ul class="menu_mm">
       <li class="menu_mm"><a href="index.php">Home</a></li>
       <li class="menu_mm"><a href="daftar-kelurahan.php">Daftar Kelurahan</a></li>
-      <li class="menu_mm"><a href="program-kerja.php">Daftar Program Kerja</a></li>
     </ul>
   </nav>
 </div>

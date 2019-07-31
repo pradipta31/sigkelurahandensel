@@ -37,7 +37,6 @@
 			</div>
 			<div class="row">
 
-				<!-- Courses Main Content -->
 				<div class="col-lg-12">
 
 					<div class="courses_container">
@@ -60,7 +59,12 @@
 									</div>
 									<div class="course_footer">
 										<div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
-											<div class="course_price ml-auto">
+											<div class="course_info">
+												<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+												<a href="program-kerja.php?id_kelurahan=<?= $row_lokasi['id_kelurahan'];?>" class="padding-left">Program Kerja</a>
+											</div>
+											<div class="course_info">
+												<i class="fa fa-map" aria-hidden="true" style="color: #1868c9"></i>
                         <a href="<?= $row_lokasi['data_lokasi'];?>" target="_blank">Lihat Lokasi</a>
                       </div>
 										</div>
@@ -75,8 +79,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- Footer -->
 
 	<?php include 'footer.php'; ?>
 </div>
