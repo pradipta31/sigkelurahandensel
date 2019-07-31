@@ -83,7 +83,7 @@
                                                 <td><?= $row_proker['nama_lurah'];?></td>
                                                 <td><?= $row_proker['judul'];?></td>
                                                 <td><?= date('d-m-Y',strtotime($row_proker['tanggal']));?></td>
-                                                <td><?= $row_proker['keterangan'];?></td>
+                                                <td><?= substr($row_proker['keterangan'],0,250);?>...</td>
                                                 <td>
                                                   <?php
                                 										if ($row_proker['status'] == 'aktif'){
