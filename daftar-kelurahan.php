@@ -18,7 +18,8 @@
 					<div class="col">
 						<div class="breadcrumbs">
 							<ul>
-								<li><a href="index.php">Daftar Kelurahan</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li>Daftar Kelurahan</li>
 							</ul>
 						</div>
 					</div>

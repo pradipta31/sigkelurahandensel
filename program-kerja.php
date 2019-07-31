@@ -1,3 +1,9 @@
+<?php
+	include 'operator/koneksi.php';
+	$id_kelurahan = $_GET['id_kelurahan'];
+	$query_kelurahan = mysqli_query($koneksi, "SELECT * FROM kelurahan WHERE id_kelurahan = '$id_kelurahan'");
+	$row_kelurahan = mysqli_fetch_assoc($query_kelurahan);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +24,9 @@
 					<div class="col">
 						<div class="breadcrumbs">
 							<ul>
-								<li><a href="index.php">Program Kerja</a></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="daftar-kelurahan.php">Kelurahan</a></li>
+								<li>Data Program Kerja <?= $row_kelurahan['nama_kelurahan'];?></li>
 							</ul>
 						</div>
 					</div>
@@ -31,7 +39,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title_container text-center">
-						<h2 class="section_title">Daftar Program Kerja SIGDENSEL</h2>
+						<h2 class="section_title">Data Program Kerja <?= $row_kelurahan['nama_kelurahan'];?></h2>
 					</div>
 				</div>
 			</div>
