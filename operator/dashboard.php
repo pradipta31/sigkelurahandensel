@@ -49,7 +49,7 @@
 								<div class="row">
 									<div class="alert alert-success" role="alert">
 										<h4 class="alert-heading">Well done!</h4>
-										<p>Selamat datang <b> <?= $row['nama'];?> </b>, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+										<p>Selamat datang <b> <?= $row['nama'];?> </b>, selamat datang di Sistem Informasi Geografis Kantor Kelurahan di Kecamatan Denpasar Selatan. Mohon untuk menggunakan sistem ini dengan baik demi kenyamanan bersama.</p>
 										<hr>
 										<p class="mb-0"><?= $row['nama_kelurahan']; ?></p>
 									</div>
@@ -57,102 +57,42 @@
 								<hr>
                 <div class="row">
                     <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
-                                <h6 class="text-white">Dashboard</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
                     <div class="col-md-6 col-lg-4 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
-                                <h6 class="text-white">Charts</h6>
-                            </div>
-                        </div>
+                        <a href="program-kerja.php">
+													<div class="card card-hover">
+	                            <div class="box bg-danger text-center">
+	                                <h1 class="font-light text-white"><i class="mdi mdi-worker"></i></h1>
+	                                <h6 class="text-white">Program Kerja</h6>
+	                            </div>
+	                        </div>
+												</a>
                     </div>
-                     <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
-                                <h6 class="text-white">Widgets</h6>
-                            </div>
-                        </div>
+										<div class="col-md-6 col-lg-4 col-xlg-3">
+                        <a href="lokasi.php">
+													<div class="card card-hover">
+	                            <div class="box bg-success text-center">
+	                                <h1 class="font-light text-white"><i class="mdi mdi-google-maps"></i></h1>
+	                                <h6 class="text-white">Lokasi</h6>
+	                            </div>
+	                        </div>
+												</a>
                     </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
-                                <h6 class="text-white">Tables</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-info text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-arrow-all"></i></h1>
-                                <h6 class="text-white">Full Width</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-4 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-danger text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
-                                <h6 class="text-white">Forms</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-info text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
-                                <h6 class="text-white">Buttons</h6>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-cyan text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-pencil"></i></h1>
-                                <h6 class="text-white">Elements</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-success text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-calendar-check"></i></h1>
-                                <h6 class="text-white">Calnedar</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <div class="col-md-6 col-lg-2 col-xlg-3">
-                        <div class="card card-hover">
-                            <div class="box bg-warning text-center">
-                                <h1 class="font-light text-white"><i class="mdi mdi-alert"></i></h1>
-                                <h6 class="text-white">Errors</h6>
-                            </div>
-                        </div>
+										<div class="col-md-6 col-lg-4 col-xlg-3">
+                        <a href="operator.php">
+													<div class="card card-hover">
+	                            <div class="box bg-info text-center">
+	                                <h1 class="font-light text-white"><i class="mdi mdi-account-multiple"></i></h1>
+	                                <h6 class="text-white">Operator</h6>
+	                            </div>
+	                        </div>
+												</a>
                     </div>
                     <!-- Column -->
                 </div>
 								<hr>
             </div>
-            <footer class="footer text-center">
-                All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+            <footer class="footer text-center" style="margin-top: 25px">
+                Sistem Informasi Geografis Kantor Kelurahan di Kecamatan Denpasar Selatan
             </footer>
         </div>
     </div>

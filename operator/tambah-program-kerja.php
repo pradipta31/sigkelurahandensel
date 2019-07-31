@@ -93,7 +93,7 @@
                 </div>
             </div>
             <footer class="footer text-center">
-                All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+                Sistem Informasi Geografis Kantor Kelurahan di Kecamatan Denpasar Selatan
             </footer>
         </div>
     </div>
