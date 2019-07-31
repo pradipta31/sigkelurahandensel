@@ -12,7 +12,7 @@
               <div class="footer_section footer_about">
                 <div class="footer_logo_container">
                   <a href="index.php">
-                    <div class="footer_logo_text">SIMA<span>GANG</span></div>
+                    <div class="footer_logo_text">SIG<span>DENSEL</span></div>
                   </a>
                 </div>
               </div>
@@ -44,7 +44,7 @@
       <div class="col">
         <div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
           <div class="cr_text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Sistem Informasi Penerimaan Mahasiswa Magang Pada Dinas Perhubungan Berbasis Web
+            Sistem Informasi Geografis Kantor Kelurahan di Kecamatan Denpasar Selatan
           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
         </div>
       </div>

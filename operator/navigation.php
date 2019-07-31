@@ -10,6 +10,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="lokasi.php" aria-expanded="false"><i class="mdi mdi-google-maps"></i><span class="hide-menu">Lokasi</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="operator.php" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Operator</span></a></li>
             </ul>
         </nav>
     </div>

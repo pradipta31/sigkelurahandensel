@@ -10,21 +10,14 @@
         $status = $_POST['status'];
         $tahun = date('Y',strtotime($tanggal));
 
-        // Check tahun apakah sudah terpakai
-        $cek = mysqli_query($koneksi, "SELECT * FROM program_kerja WHERE judul = '$judul' AND YEAR(tanggal)='$tahun' AND id_kelurahan='$id_kelurahan'");
-        $row = mysqli_num_rows($cek);
-        if($row == null){
-          $query = mysqli_query($koneksi, "UPDATE program_kerja SET judul='$judul', tanggal='$tanggal', keterangan='$keterangan', status='$status' WHERE id_program_kerja='$id_program_kerja'");
-          if($query){
-              echo "<script>
-                  alert('Program kerja berhasil diubah!');
-                  window.location.href='program-kerja.php';
-              </script>";
-          }else{
-              echo "Terjadi kesalahan";
-          }
+        $query = mysqli_query($koneksi, "UPDATE program_kerja SET judul='$judul', tanggal='$tanggal', keterangan='$keterangan', status='$status' WHERE id_program_kerja='$id_program_kerja'");
+        if($query){
+            echo "<script>
+                alert('Program kerja berhasil diubah!');
+                window.location.href='program-kerja.php';
+            </script>";
         }else{
-          echo "Tahun program kerja sudah terpakai!";
+            echo "Terjadi kesalahan";
         }
     }
 ?>

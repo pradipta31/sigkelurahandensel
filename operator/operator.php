@@ -32,12 +32,12 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Data Lokasi <?= $row['nama_kelurahan'];?></h4>
+                        <h4 class="page-title">Data Operator <?= $row['nama_kelurahan'];?></h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Lokasi</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Operator</li>
                                 </ol>
                             </nav>
                         </div>
@@ -50,57 +50,44 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                  <?php
-                                    include 'koneksi.php';
-                                    $check_lokasi = mysqli_query($koneksi,
-                                    "SELECT COUNT(*) as total FROM lokasi
-                                    WHERE id_kelurahan = '$row[id_kelurahan]'");
-                                    $row_loc = mysqli_fetch_assoc($check_lokasi);
-                                    if ($row_loc['total'] == '1') {
-
-                                  ?>
-
-                                <?php }else{ ?>
                                   <button type="button" class="btn btn-default"
-                                      data-toggle="modal" data-target="#tambahLokasi">
-                                      Tambah Lokasi
+                                      data-toggle="modal" data-target="#tambahOperator">
+                                      Tambah Operator
                                   </button>
-                                <?php } ?>
-                                  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id="tambahLokasi">
+                                  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id="tambahOperator">
                                       <div class="modal-dialog modal-lg">
                                           <div class="modal-content">
-                                            <form class="form-horizontal" action="tambah-lokasi.php" method="POST" enctype="multipart/form-data">
+                                            <form class="form-horizontal" action="tambah-operator.php" method="POST" enctype="multipart/form-data">
                                                 <input type="hidden" name="id_kelurahan" value="<?= $row['id_kelurahan'];?>">
-                                                <input type="hidden" name="id_operator" value="<?= $row['id_operator'];?>">
                                                 <div class="modal-header">
-                                                    <h4 class="modal-title" id="myModalLabel">Tambah Lokasi Baru</h4>
+                                                    <h4 class="modal-title" id="myModalLabel">Tambah Operator Baru</h4>
                                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="card-body">
                                                         <div class="form-group row">
-                                                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Data Lokasi</label>
+                                                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Nama</label>
                                                             <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="data_lokasi" placeholder="Masukan data lokasi">
+                                                                <input type="text" class="form-control" name="nama" placeholder="Masukan nama">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
-                                                            <label for="lname" class="col-sm-3 text-right control-label col-form-label">Foto</label>
+                                                            <label for="lname" class="col-sm-3 text-right control-label col-form-label">Email</label>
                                                             <div class="col-sm-9">
-                                                                <input type="file" class="form-control" name="foto">
+                                                                <input type="email" class="form-control" name="email" placeholder="Masukan alamat email">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
-                                                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Latitude</label>
+                                                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Username</label>
                                                             <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="latitude" placeholder="Masukan latitude">
+                                                                <input type="text" class="form-control" name="username" placeholder="Masukan username">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
-                                                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Longtitude</label>
+                                                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Password</label>
                                                             <div class="col-sm-9">
-                                                                <input type="text" class="form-control" name="longtitude" placeholder="Masukan longtitude">
+                                                                <input type="text" class="form-control" name="password" placeholder="Masukan password">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -122,10 +109,10 @@
                                                 <th>No</th>
                                                 <th>Kelurahan</th>
                                                 <th>Nama Lurah</th>
-                                                <th>Data Lokasi</th>
-                                                <th>Foto</th>
-                                                <th>Latitude</th>
-                                                <th>Longtitude</th>
+                                                <th>Nama</th>
+                                                <th>Email</th>
+                                                <th>Username</th>
+                                                <th>Status</th>
                                                 <th>Opsi</th>
                                             </tr>
                                         </thead>
@@ -133,66 +120,81 @@
                                           <?php
                                             include 'koneksi.php';
                                             $no = 1;
-                                            $query_lokasi = mysqli_query($koneksi,
-                                            "SELECT * FROM lokasi
-                                            JOIN kelurahan ON kelurahan.id_kelurahan = lokasi.id_kelurahan
-                                            JOIN operator ON operator.id_operator = lokasi.id_operator
+                                            $query_operator = mysqli_query($koneksi,
+                                            "SELECT * FROM operator
+                                            JOIN kelurahan ON kelurahan.id_kelurahan = operator.id_kelurahan
                                             WHERE kelurahan.id_kelurahan = '$row[id_kelurahan]'");
-                                            while ($row_lokasi = mysqli_fetch_assoc($query_lokasi)) {
+                                            while ($row_operator = mysqli_fetch_assoc($query_operator)) {
                                           ?>
                                             <tr>
                                                 <td><?= $no++; ?></td>
-                                                <td><?= $row_lokasi['nama_kelurahan'];?></td>
-                                                <td><?= $row_lokasi['nama_lurah'];?></td>
+                                                <td><?= $row_operator['nama_kelurahan'];?></td>
+                                                <td><?= $row_operator['nama_lurah'];?></td>
                                                 <td>
-                                                  <a href="<?= $row_lokasi['data_lokasi'];?>" target="_blank">Lihat</a>
+                                                  <?= $row_operator['nama'];?>
                                                 </td>
                                                 <td>
-                                                  <a href="#" onClick="showImage('<?= $row_lokasi['foto'];?>');" class="btn btn-default btn-sm">Lihat Foto</a>
+                                                  <?= $row_operator['email']; ?>
                                                 </td>
-                                                <td><?= $row_lokasi['latitude'];?></td>
-                                                <td><?= $row_lokasi['longtitude'];?></td>
+                                                <td><?= $row_operator['username'];?></td>
+                                                <td>
+                                                  <?php
+                                										if ($row_operator['status'] == 'aktif'){
+                                											echo "<center><label class='alert alert-success' style='padding: 5px 5px'>Aktif</label></center>";
+                                										}else{
+                                											echo "<center><label class='alert alert-warning' style='padding: 5px 5px'>Tidak Aktif</label></center>";
+                                										}
+                                									?>
+                                                </td>
                                                 <td>
                                                   <button type="button" class="btn btn-warning btn-sm"
-                                                      data-toggle="modal" data-target="#editProker<?= $row_lokasi['id_lokasi']; ?>">
+                                                      data-toggle="modal" data-target="#editOperator<?= $row_operator['id_operator']; ?>">
                                                       Edit
                                                   </button>
-                                                  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id="editProker<?= $row_lokasi['id_lokasi'];?>">
+                                                  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id="editOperator<?= $row_operator['id_operator'];?>">
                                                       <div class="modal-dialog modal-lg">
                                                           <div class="modal-content">
-                                                            <form class="form-horizontal" action="edit-lokasi.php" method="POST" enctype="multipart/form-data">
-                                                                <input type="hidden" name="id_lokasi" value="<?= $row_lokasi['id_lokasi'];?>">
-                                                                <input type="hidden" name="id_kelurahan" value="<?= $row_lokasi['id_kelurahan'];?>">
-                                                                <input type="hidden" name="id_operator" value="<?= $row_lokasi['id_operator'];?>">
+                                                            <form class="form-horizontal" action="edit-operator.php" method="POST" enctype="multipart/form-data">
+                                                                <input type="hidden" name="id_operator" value="<?= $row_operator['id_operator'];?>">
                                                                 <div class="modal-header">
-                                                                    <h4 class="modal-title" id="myModalLabel">Edit Lokasi</h4>
+                                                                    <h4 class="modal-title" id="myModalLabel">Edit Operator <?= $row_operator['nama'];?></h4>
                                                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <div class="card-body">
                                                                       <div class="form-group row">
-                                                                          <label for="fname" class="col-sm-3 text-right control-label col-form-label">Data Lokasi</label>
+                                                                          <label for="fname" class="col-sm-3 text-right control-label col-form-label">Nama</label>
                                                                           <div class="col-sm-9">
-                                                                              <input type="text" class="form-control" name="data_lokasi" value="<?= $row_lokasi['data_lokasi'];?>">
+                                                                              <input type="text" class="form-control" name="nama" value="<?= $row_operator['nama'];?>">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group row">
-                                                                          <label for="lname" class="col-sm-3 text-right control-label col-form-label">Foto</label>
+                                                                          <label for="lname" class="col-sm-3 text-right control-label col-form-label">Email</label>
                                                                           <div class="col-sm-9">
-                                                                              <input type="file" class="form-control" name="foto">
+                                                                              <input type="email" class="form-control" name="email" value="<?= $row_operator['email'];?>">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group row">
-                                                                          <label for="fname" class="col-sm-3 text-right control-label col-form-label">Latitude</label>
+                                                                          <label for="fname" class="col-sm-3 text-right control-label col-form-label">Username</label>
                                                                           <div class="col-sm-9">
-                                                                              <input type="text" class="form-control" name="latitude" value="<?= $row_lokasi['latitude'];?>">
+                                                                              <input type="text" class="form-control" name="username" value="<?= $row_operator['username'];?>">
                                                                           </div>
                                                                       </div>
                                                                       <div class="form-group row">
-                                                                          <label for="fname" class="col-sm-3 text-right control-label col-form-label">Longtitude</label>
+                                                                          <label for="fname" class="col-sm-3 text-right control-label col-form-label">Password</label>
                                                                           <div class="col-sm-9">
-                                                                              <input type="text" class="form-control" name="longtitude" value="<?= $row_lokasi['longtitude'];?>">
+                                                                              <input type="text" class="form-control" name="password" placeholder="Masukan password">
+                                                                          </div>
+                                                                          <small>NB: Kosongkan jika tidak ingin mengubah password</small>
+                                                                      </div>
+                                                                      <div class="form-group row">
+                                                                          <label for="fname" class="col-sm-3 text-right control-label col-form-label">Status</label>
+                                                                          <div class="col-sm-9">
+                                                                              <select class="form-control" name="status" value="<?= $row_operator['status'];?>">
+                                                                                <option value="aktif" <?= $row_operator['status'] == 'aktif' ? 'selected' : '';?>>Aktif</option>
+                                                                                <option value="nonaktif" <?= $row_operator['status'] == 'nonaktif' ? 'selected' : '';?>>Non Aktif</option>
+                                                                              </select>
                                                                           </div>
                                                                       </div>
                                                                     </div>
@@ -205,8 +207,6 @@
                                                           </div>
                                                       </div>
                                                   </div>
-                                                  <!-- <a href="hapus-proker.php?id_program_kerja=<?= $row_proker['id_program_kerja']; ?>"
-                                                    onclick = "return confirm('Apakah anda yakin ingin menghapus data ini?')" class="btn btn-danger btn-sm">Hapus</a> -->
                                                 </td>
                                             </tr>
                                           <?php } ?>
@@ -224,16 +224,6 @@
         </div>
     </div>
     <?php include 'bottom-script.php'; ?>
-    <script src="../dist/js/bootbox/bootbox.min.js"></script>
-    <script type="text/javascript">
-      function showImage(foto){
-        bootbox.dialog({
-          message: '<img src="../operator/foto/'+foto+'" class="img-responsive" style="height: 350px; width: 350px">',
-          closeButton: true,
-          size: 'medium'
-        });
-      }
-    </script>
     <script>
         $('#zero_config').DataTable();
     </script>

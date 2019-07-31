@@ -5,15 +5,14 @@
         <div class="header_content d-flex flex-row align-items-center justify-content-start">
           <div class="logo_container">
             <a href="#">
-              <div class="logo_text">SIMA<span>GANG</span></div>
+              <div class="logo_text">SIG<span>DENSEL</span></div>
             </a>
           </div>
           <nav class="main_nav_contaner ml-auto">
             <ul class="main_nav">
               <li><a href="index.php">Home</a></li>
-              <li><a href="daftar-magang.php">Daftar Magang</a></li>
-              <li><a href="pengumuman.php">Pengumuman Penerimaan</a></li>
-              <li><a href="login.php">Login</a></li>
+              <li><a href="daftar-kelurahan.php">Daftar Kelurahan</a></li>
+              <li><a href="program-kerja.php">Daftar Program Kerja</a></li>
             </ul>
             <div class="hamburger menu_mm">
               <i class="fa fa-bars menu_mm" aria-hidden="true"></i>

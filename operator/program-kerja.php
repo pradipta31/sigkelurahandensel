@@ -74,7 +74,7 @@
                                             "SELECT * FROM program_kerja
                                             JOIN kelurahan ON kelurahan.id_kelurahan = program_kerja.id_kelurahan
                                             JOIN operator ON operator.id_operator = program_kerja.id_operator
-                                            WHERE operator.id_operator = '$id_operator'");
+                                            WHERE kelurahan.id_kelurahan = '$row[id_kelurahan]'");
                                             while ($row_proker = mysqli_fetch_assoc($query_proker)) {
                                           ?>
                                             <tr>
