@@ -18,7 +18,7 @@
 					<div class="col">
 						<div class="breadcrumbs">
 							<ul>
-								<li><a href="index.php">Program Kerja</a></li>
+								<li><a href="index.php">Daftar Kelurahan</a></li>
 							</ul>
 						</div>
 					</div>
@@ -28,6 +28,13 @@
 	</div>
   <div class="courses">
 		<div class="container">
+      <div class="row">
+				<div class="col">
+					<div class="section_title_container text-center">
+						<h2 class="section_title">Daftar Kelurahan Denpasar Selatan</h2>
+					</div>
+				</div>
+			</div>
 			<div class="row">
 
 				<!-- Courses Main Content -->
