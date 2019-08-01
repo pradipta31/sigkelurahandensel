@@ -15,7 +15,7 @@
 
     if(!empty($lokasi_foto)){
       move_uploaded_file($lokasi_foto,$direktori);
-      $query = "UPDATE lokasi SET data_lokasi='$data_lokasi', foto='$nama_foto', latitude='$latitude', longtitude='$longtitude'";
+      $query = "UPDATE lokasi SET data_lokasi='$data_lokasi', foto='$nama_foto', latitude='$latitude', longtitude='$longtitude' WHERE id_lokasi='$id_lokasi'";
       $mysqli = $koneksi->query($query);
 
       echo "<script>
@@ -23,7 +23,7 @@
           window.location.href='lokasi.php';
       </script>";
     }else{
-      $query = "UPDATE lokasi SET data_lokasi='$data_lokasi', latitude='$latitude', longtitude='$longtitude'";
+      $query = "UPDATE lokasi SET data_lokasi='$data_lokasi', latitude='$latitude', longtitude='$longtitude' WHERE id_lokasi='$id_lokasi";
       $mysqli = $koneksi->query($query);
 
       echo "<script>
