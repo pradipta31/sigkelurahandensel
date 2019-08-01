@@ -103,6 +103,12 @@
                                                                 <input type="text" class="form-control" name="longtitude" placeholder="Masukan longtitude">
                                                             </div>
                                                         </div>
+																												<div class="form-group row">
+                                                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Alamat</label>
+                                                            <div class="col-sm-9">
+                                                                <textarea name="alamat" rows="8" cols="80" class="form-control"></textarea>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
@@ -123,6 +129,7 @@
                                                 <th>Kelurahan</th>
                                                 <th>Nama Lurah</th>
                                                 <th>Data Lokasi</th>
+																								<th>Alamat</th>
                                                 <th>Foto</th>
                                                 <th>Latitude</th>
                                                 <th>Longtitude</th>
@@ -147,6 +154,7 @@
                                                 <td>
                                                   <a href="<?= $row_lokasi['data_lokasi'];?>" target="_blank">Lihat</a>
                                                 </td>
+																								<td><?= $row_lokasi['alamat'];?></td>
                                                 <td>
                                                   <a href="#" onClick="showImage('<?= $row_lokasi['foto'];?>');" class="btn btn-default btn-sm">Lihat Foto</a>
                                                 </td>
@@ -195,6 +203,12 @@
                                                                               <input type="text" class="form-control" name="longtitude" value="<?= $row_lokasi['longtitude'];?>">
                                                                           </div>
                                                                       </div>
+																																			<div class="form-group row">
+							                                                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Alamat</label>
+							                                                            <div class="col-sm-9">
+							                                                                <textarea name="alamat" class="form-control" rows="8" cols="80"><?= $row_lokasi['alamat'];?></textarea>
+							                                                            </div>
+							                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">

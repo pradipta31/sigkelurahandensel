@@ -4,6 +4,7 @@
     $id_kelurahan = $_POST['id_kelurahan'];
     $id_operator = $_POST['id_operator'];
     $data_lokasi = $_POST['data_lokasi'];
+    $alamat = $_POST['alamat'];
     $latitude = $_POST['latitude'];
     $longtitude = $_POST['longtitude'];
 
@@ -14,8 +15,8 @@
 
     if(!empty($lokasi_foto)){
       move_uploaded_file($lokasi_foto,$direktori);
-      $query ="INSERT INTO lokasi (id_kelurahan, id_operator, data_lokasi, foto, latitude, longtitude)
-      VALUES ('$id_kelurahan','$id_operator','$data_lokasi','$nama_foto','$latitude', '$longtitude')";
+      $query ="INSERT INTO lokasi (id_kelurahan, id_operator, data_lokasi, alamat, foto, latitude, longtitude)
+      VALUES ('$id_kelurahan','$id_operator','$data_lokasi','$alamat', '$nama_foto','$latitude', '$longtitude')";
       $mysqli = $koneksi->query($query);
       // if ($query) {
       //   echo "Berhasil bro!";
