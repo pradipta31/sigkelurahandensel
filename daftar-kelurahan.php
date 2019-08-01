@@ -66,7 +66,7 @@
 											</div>
 											<div class="course_info">
 												<i class="fa fa-map" aria-hidden="true" style="color: #1868c9"></i>
-                        <a href="<?= $row_lokasi['data_lokasi'];?>" target="_blank">Lihat Lokasi</a>
+                        <a href="lokasi_detail.php?id_kelurahan=<?= $row_lokasi['id_kelurahan'];?>">Lihat Lokasi</a>
                       </div>
 										</div>
 									</div>
