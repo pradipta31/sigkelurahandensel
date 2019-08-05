@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 30, 2019 at 05:05 PM
--- Server version: 5.7.19
--- PHP Version: 7.1.12
+-- Host: 127.0.0.1:3306
+-- Generation Time: Aug 05, 2019 at 05:02 AM
+-- Server version: 10.2.23-MariaDB
+-- PHP Version: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sigkelurahan`
+-- Database: `u873233258_sig`
 --
 
 -- --------------------------------------------------------
@@ -57,10 +57,23 @@ CREATE TABLE `lokasi` (
   `id_kelurahan` int(11) NOT NULL,
   `id_operator` int(11) NOT NULL,
   `data_lokasi` text NOT NULL,
+  `alamat` text NOT NULL,
   `foto` varchar(199) NOT NULL,
   `latitude` varchar(199) NOT NULL,
   `longtitude` varchar(199) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `lokasi`
+--
+
+INSERT INTO `lokasi` (`id_lokasi`, `id_kelurahan`, `id_operator`, `data_lokasi`, `alamat`, `foto`, `latitude`, `longtitude`) VALUES
+(1, 1, 1, 'https://goo.gl/maps/5a8kMQib7gWWbd13A', 'Jalan Raya Sesetan No.514, Denpasar Selatan, Sesetan, Denpasar, Kota Denpasar, Bali 80223', 'sesetan.png', '-8.7015117', '115.2169513'),
+(2, 2, 2, 'https://goo.gl/maps/NrvAMjUZtzs7fupv9', 'Jl. Tukad Pakerisan No.65, Dauh Puri Klod, Kec. Denpasar Bar., Kota Denpasar, Bali 80225', 'panjer.png', '-8.6841154', '115.2241413'),
+(3, 3, 3, 'https://goo.gl/maps/xxQLSj1UTzbormrX7', 'Jl. Pulau Belitung No.1, Pedungan, Kec. Denpasar Sel., Kota Denpasar, Bali 80114', 'pedungan.png', '-8.7138121', '115.1755033'),
+(4, 4, 4, 'https://goo.gl/maps/HjuULj3RF2nRnez79', 'Jl. Tukad Balian No.109, Renon, Kec. Denpasar Sel., Kota Denpasar, Bali 80226', 'renon.png', '-8.6857758', '115.2375249'),
+(5, 6, 6, 'https://goo.gl/maps/36f5sqmUqQ6u2zNS7', 'Jl. Tukad Pekaseh No.11, Serangan, Kec. Denpasar Sel., Kota Denpasar, Bali 80229', 'serangan.png', '-8.7253163', '115.232482'),
+(6, 5, 5, 'https://goo.gl/maps/jtYJGsJYePBA6AZo7', 'Jl. Danau Tondano No.60, Sanur, Kec. Denpasar Sel., Kota Denpasar, Bali 80227', 'sanur.png', '-8.6800382', '115.2544539');
 
 -- --------------------------------------------------------
 
@@ -105,6 +118,20 @@ CREATE TABLE `program_kerja` (
   `keterangan` text NOT NULL,
   `status` varchar(199) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `program_kerja`
+--
+
+INSERT INTO `program_kerja` (`id_program_kerja`, `id_kelurahan`, `id_operator`, `judul`, `tanggal`, `keterangan`, `status`) VALUES
+(1, 5, 5, 'lomba', '2019-07-02', 'm\r\na\r\nn\r\nt\r\na\r\np\r\n', 'aktif'),
+(2, 3, 3, 'launching tari maskot, mars dan hymne pedungan', '2019-08-21', 'Bertepatan dengan Hari Sumpah Pemuda , telah berlangsung acara peresmian Tari Maskot dan Hymne Pedungan (28/10/2018). Acara ini berlangsung di Br.Pande Kelurahan Pedungan\r\n\r\nSelain mewujudkan Visi dan Misi Kota Denpasar. Tujuan dari Peluncuran Tari Maskot Mars dan Hymne Pedungan ini yakni sebagai rasa syukur kehadapan Leluhur yang telah berjuang pada masanya dan meninggalkan sebuah peninggalan yang bernilai estetika yaitu berkaitan dengan sejarah Peduwungan yang memiliki arti \"Saung Keris\" bisa dibuktikan dengan adanya peninggalan Pura Dalem Pakerisan yang dulunya sampai sekarang adalah tempat penyimpanan Keris Pusaka yang saat ini Mesimpen/Megenahan di Pura Pererepan Dalem Pakerisan Banjar Sawah Pedungan , maka dengan itu Tarian ini diberinama ”Satria Wirang” yang artinya Satria = Berani Wirang= Nindihin / Mengabdi, jadi Satria Wirang memiliki filosofi Harus berani berjuang dan berusaha dalam pengabdian di tanah kelahiran ujar Anak Agung Oka Adnyana. Dan nanti kedepannya Mars dan Hymne ini akan di perlombkan di tingkat Sekehe Truna, demi tetap menjaga eksistensi Mars dan Hymne Pedungan.', 'aktif'),
+(3, 3, 3, 'Pencetakan E-KTP', '2019-08-15', 'Pengumuman Bagi Warga Pedungan . Untuk Proses Pencetakan Hasil E-KTP yang baru bisa diambil di Kepala Lingkungan Masing-masing dengan membawa Kwitansi Perekaman E-KTP.\r\n\r\nJika KTP tidak tercetak, mohon Kwitansi diSahkan dengan tanda Tangan dan Cap dari Kepala Lingkungan dan Kelurahan kemudian disampaikan langsung Ke Dinas Kependudukan dan Catatan Sipil Kota Denpasar untuk ditindak Lanjut .\r\n\r\nAn, Staf Kel Pedungan . Terima Kasih', 'aktif'),
+(4, 1, 1, 'Pencetakan E-KTP', '2019-08-02', 'Pengumuman Bagi Warga Pedungan . Untuk Proses Pencetakan Hasil E-KTP yang baru bisa diambil di Kepala Lingkungan Masing-masing dengan membawa Kwitansi Perekaman E-KTP.\r\n\r\nJika KTP tidak tercetak, mohon Kwitansi diSahkan dengan tanda Tangan dan Cap dari Kepala Lingkungan dan Kelurahan kemudian disampaikan langsung Ke Dinas Kependudukan dan Catatan Sipil Kota Denpasar untuk ditindak Lanjut .\r\n\r\nAn, Staf Kel sesetan. Terima Kasih', 'aktif'),
+(5, 2, 2, 'Pencetakan E-KTP', '2019-08-02', 'Pengumuman Bagi Warga Pedungan . Untuk Proses Pencetakan Hasil E-KTP yang baru bisa diambil di Kepala Lingkungan Masing-masing dengan membawa Kwitansi Perekaman E-KTP.\r\n\r\nJika KTP tidak tercetak, mohon Kwitansi diSahkan dengan tanda Tangan dan Cap dari Kepala Lingkungan dan Kelurahan kemudian disampaikan langsung Ke Dinas Kependudukan dan Catatan Sipil Kota Denpasar untuk ditindak Lanjut .\r\n\r\nAn, Staf Kel Panjer. Terima Kasih', 'aktif'),
+(6, 6, 6, 'Pencetakan E-KTP', '2019-08-02', 'Pengumuman Bagi Warga Pedungan . Untuk Proses Pencetakan Hasil E-KTP yang baru bisa diambil di Kepala Lingkungan Masing-masing dengan membawa Kwitansi Perekaman E-KTP.\r\n\r\nJika KTP tidak tercetak, mohon Kwitansi diSahkan dengan tanda Tangan dan Cap dari Kepala Lingkungan dan Kelurahan kemudian disampaikan langsung Ke Dinas Kependudukan dan Catatan Sipil Kota Denpasar untuk ditindak Lanjut .\r\n\r\nAn, Staf Kel Serangan. Terima Kasih', 'aktif'),
+(7, 4, 4, 'Pencetakan E-KTP', '2019-08-02', 'Pengumuman Bagi Warga Pedungan . Untuk Proses Pencetakan Hasil E-KTP yang baru bisa diambil di Kepala Lingkungan Masing-masing dengan membawa Kwitansi Perekaman E-KTP.\r\n\r\nJika KTP tidak tercetak, mohon Kwitansi diSahkan dengan tanda Tangan dan Cap dari Kepala Lingkungan dan Kelurahan kemudian disampaikan langsung Ke Dinas Kependudukan dan Catatan Sipil Kota Denpasar untuk ditindak Lanjut .\r\n\r\nAn, Staf Kel Renon. Terima Kasih', 'aktif'),
+(8, 5, 5, 'Pencetakan E-KTP', '2019-08-15', 'Pengumuman Bagi Warga Pedungan . Untuk Proses Pencetakan Hasil E-KTP yang baru bisa diambil di Kepala Lingkungan Masing-masing dengan membawa Kwitansi Perekaman E-KTP.\r\n\r\nJika KTP tidak tercetak, mohon Kwitansi diSahkan dengan tanda Tangan dan Cap dari Kepala Lingkungan dan Kelurahan kemudian disampaikan langsung Ke Dinas Kependudukan dan Catatan Sipil Kota Denpasar untuk ditindak Lanjut .\r\n\r\nAn, Staf Kel Sanur. Terima Kasih', 'aktif');
 
 --
 -- Indexes for dumped tables
@@ -154,7 +181,7 @@ ALTER TABLE `kelurahan`
 -- AUTO_INCREMENT for table `lokasi`
 --
 ALTER TABLE `lokasi`
-  MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `operator`
@@ -166,7 +193,7 @@ ALTER TABLE `operator`
 -- AUTO_INCREMENT for table `program_kerja`
 --
 ALTER TABLE `program_kerja`
-  MODIFY `id_program_kerja` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_program_kerja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
