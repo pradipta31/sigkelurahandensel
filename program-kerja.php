@@ -37,12 +37,17 @@
   <div class="news">
 		<div class="container">
 			<div class="row">
-				<div class="col">
+				<div class="col-md-11">
 					<div class="section_title_container text-center">
 						<h2 class="section_title">Data Program Kerja <?= $row_kelurahan['nama_kelurahan'];?></h2>
 					</div>
 				</div>
+				<div class="col-md-1">
+					<a href="operator/file/surat-pengantar-kelurahan.pdf" class="btn btn-primary btn-md"
+					onclick="return confirm('Apakah Anda ingin download/cetak surat pengantar?');" style="margin-left: -50px" target="_blank"> <i class="fa fa-download"></i> Unduh File</a>
+				</div>
 			</div>
+
 			<div class="row news_row">
 
 				<div class="col-lg-12 news_col">
@@ -61,7 +66,9 @@
                 $row_loc = mysqli_fetch_assoc($query_lokasi);
             ?>
             <div class="news_post_small">
-							<div class="news_post_small_title"><a href="<?= $row_loc['data_lokasi'];?>" target="_blank"><?= $row_proker['judul'];?></a></div>
+							<div class="news_post_small_title">
+								<a href="<?= $row_loc['data_lokasi'];?>" target="_blank"><?= $row_proker['judul'];?></a>
+							</div>
 							<div class="news_post_meta">
 								<ul>
                   <p style="text-align: justify"><?= $row_proker['keterangan'];?></p>
@@ -70,6 +77,7 @@
 								</ul>
 							</div>
 						</div>
+
             <?php } ?>
 
 					</div>
